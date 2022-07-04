@@ -109,9 +109,10 @@ while let Some(<var>) = Iterator::next(&<Iterator>){
 ### 2.4 Match
 
 ```rust
-match Some(5){
-    Some(n) => n,
-    None => panic!(
-    )
+fn unwrap(self) -> T{
+    match Some(5){
+        Some(n) => n,
+        None => panic()
+    }
 }
 ```
