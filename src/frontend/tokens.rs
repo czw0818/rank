@@ -2,7 +2,7 @@ use logos::Logos;
 use Token::*;
 
 #[derive(Logos,Debug,PartialEq)]
-enum Token{
+pub enum Token{
     #[token("if")]
     If,
     #[token("else")]
