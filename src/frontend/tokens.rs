@@ -64,6 +64,7 @@ pub enum Token{
     #[token("panic")]
     Panic,
     #[error]
+    #[regex(r"[ \t\n\f]+", logos::skip)]
     Error,
 }
 impl Token{

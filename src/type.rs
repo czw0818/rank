@@ -29,8 +29,8 @@ impl Types{
     }
 }
 
-impl From<String> for Types{
-    fn from(f: String) -> Self {
+impl<'a> From<&'a str> for Types{
+    fn from(f: &'a str) -> Self {
         match f.as_bytes(){
             b"int" => Self::Int,
             b"float" => Self::Float,

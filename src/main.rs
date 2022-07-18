@@ -2,9 +2,8 @@ pub mod frontend;
 pub mod r#type;
 pub mod rt;
 
-fn main() {
-    parse_struct()
-}
+fn main() {}
+#[test]
 fn parse_struct(){
     use crate::frontend::{parse::Parser,tokens::Token};
     use logos::Logos;
