@@ -3,6 +3,8 @@ name = "rank"
 version = "0.1.0"
 edition = "2021"
 
+#[workspace]
+#members = ["stack-vm"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [profile.release]
 lto = "t"
@@ -10,3 +12,4 @@ panic = "abort"
 strip = true
 [dependencies]
 logos = "0.12.1"
+hashbrown = "0.12.2"

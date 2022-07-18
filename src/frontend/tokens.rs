@@ -63,3 +63,4 @@ impl Token{
         matches!(self,If | Else | For | In | While | Type | Struct | Panic) 
     }
 }
+pub type TokenStream<'a> = logos::Lexer<'a,Token>;
