@@ -3,6 +3,8 @@ use Token::*;
 
 #[derive(Logos,Debug,PartialEq)]
 pub enum Token{
+    #[regex(r"[0-9]+")]
+    Num,
     #[token("if")]
     If,
     #[token("else")]
@@ -17,7 +19,7 @@ pub enum Token{
     SpeIde,
     #[token("#")]
     Well,
-    #[regex("[a-zA-Z]+")]
+    #[regex("[a-zA-Z][a-zA-Z0-9]+")]
     Ident,
     #[token("type")]
     Type,
@@ -31,10 +33,16 @@ pub enum Token{
     Div,
     #[token("struct")]
     Struct,
+    #[token("union")]
+    Union,
+    #[token("Enum")]
+    Enum,
     #[token(":")]
     Colon,
     #[token(";")]
     Semicolon,
+    #[token("()")]
+    Unit,
     #[token("==")]
     IsEqual,
     #[token("!=")]
@@ -60,7 +68,7 @@ pub enum Token{
 }
 impl Token{
     pub fn is_keyword(&self) -> bool{
-        matches!(self,If | Else | For | In | While | Type | Struct | Panic) 
+        matches!(self,If | Else | For | In | While | Type | Struct | Panic|Enum|Union) 
     }
 }
 pub type TokenStream<'a> = logos::Lexer<'a,Token>;
